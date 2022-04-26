@@ -1,0 +1,36 @@
+{
+  "name": "pdl-react-autocomplete",
+  "version": "1.0.0",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "module": "dist/index.mjs",
+  "targets": {
+    "main": {
+      "includeNodeModules": false,
+      "isLibrary": true
+    },
+    "module": {
+      "includeNodeModules": false,
+      "isLibrary": true
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "start": "parcel watch",
+    "build": "parcel build"
+  },
+  "repository": "https://github.com/peopledatalabs/pdl-react-autocomplete.git",
+  "author": "David Oh <103519873+davidoh15@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.5.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@parcel/transformer-react-refresh-wrap": "^2.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  }
+}
