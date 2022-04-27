@@ -1,0 +1,142 @@
+.App {
+    display: flex;
+    justify-content: center;
+    font-family: 'Fira Code', monospace;
+}
+
+.df {
+    display: flex
+}
+
+.row {
+    flex-direction: row;
+}
+
+.col {
+    flex-direction: column
+}
+
+.dn {
+    display: none;
+}
+
+.mouseover {
+    background-color: #C4ADFF;
+    cursor: pointer;
+}
+
+.keyselected {
+    background-color: #C4ADFF;
+}
+
+.autocomplete {
+    position: absolute;
+    z-index: 99;
+    font-size: .8rem;
+    width: 28vw;
+    min-width: 18rem;
+}
+
+.auto-input-wrapper {
+    width: 28vw;
+    min-width: 18rem;
+    padding: .5rem;
+    border: .1rem solid #d2d6dc;
+    background-color: #f9f9f9;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+}
+
+
+.input-wrapper-focus {
+    border: .105rem solid #5C36BA;
+    background-color: white;
+}
+
+input.auto-input {
+    font-size: 1rem;
+    height: 100%;
+    width: 100%;
+    background-color: #F7F7F7;
+    outline: none;
+    border: none;
+}
+
+input:focus.auto-input {
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.bb {
+    border-bottom: 0.1rem solid #b0b0b082;
+}
+
+.suggestions {
+    width: 100%;
+    background-color: white;
+}
+
+.suggestion {
+    width: 100%;
+    padding: .5rem;
+    border-left: 0.1rem solid #b0b0b082;
+    border-right: 0.1rem solid #b0b0b082;
+    justify-content: space-between;
+}
+
+.suggestion:hover {
+    background-color: #C4ADFF
+}
+
+.suggestion-name {
+    padding-left: .75rem;
+}
+
+.suggestion-count {
+    padding-right: .75rem;
+}
+
+.suggestions-pending {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    padding: .5rem;
+    background: white;
+    border-bottom: 0.1rem solid #b0b0b082;
+    border-left: 0.1rem solid #b0b0b082;
+    border-right: 0.1rem solid #b0b0b082;
+}
+
+.suggestions-error {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    background: white;
+    padding: .5rem;
+    font-size: 1rem;
+    border-bottom: 0.1rem solid #b0b0b082;
+    border-left: 0.1rem solid #b0b0b082;
+    border-right: 0.1rem solid #b0b0b082;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    margin-left: .2rem;
+    width: 1.095rem;
+    height: 1rem;
+    border: .2rem solid #d1d0d0bb;
+    border-top: .2rem solid #727272d0;
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+}
