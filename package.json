@@ -19,8 +19,9 @@
     "dist/**"
   ],
   "scripts": {
-    "start": "parcel watch -p 3006",
-    "build": "parcel build"
+    "dev": "parcel watch -p 3006",
+    "build": "parcel build",
+    "pub": "yarn run build && yarn publish"
   },
   "repository": {
     "type": "git",
