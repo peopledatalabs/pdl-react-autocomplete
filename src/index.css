@@ -1,35 +1,29 @@
-.App {
-    display: flex;
-    justify-content: center;
-    font-family: 'Fira Code', monospace;
-}
-
-.df {
+.pdl-df {
     display: flex
 }
 
-.row {
+.pdl-row {
     flex-direction: row;
 }
 
-.col {
+.pdl-col {
     flex-direction: column
 }
 
-.dn {
+.pdl-dn {
     display: none;
 }
 
-.mouseover {
+.pdl-mouseover {
     background-color: #C4ADFF;
     cursor: pointer;
 }
 
-.selected {
+.pdl-selected {
     background-color: #C4ADFF;
 }
 
-.autocomplete {
+.pdl-autocomplete {
     position: absolute;
     z-index: 99;
     font-size: .8rem;
@@ -37,7 +31,7 @@
     min-width: 18rem;
 }
 
-.auto-input-wrapper {
+.pdl-auto-input-wrapper {
     width: 28vw;
     min-width: 18rem;
     padding: .5rem;
@@ -49,12 +43,12 @@
 }
 
 
-.input-wrapper-focus {
+.pdl-input-wrapper-focus {
     border: .105rem solid #5C36BA;
     background-color: white;
 }
 
-input.auto-input {
+input.pdl-auto-input {
     font-size: 1rem;
     height: 100%;
     width: 100%;
@@ -63,13 +57,13 @@ input.auto-input {
     border: none;
 }
 
-input:focus.auto-input {
+input:focus.pdl-auto-input {
     outline: none;
     border: none;
     background-color: white;
 }
 
-.suggestions {
+.pdl-suggestions {
     width: 100%;
     background-color: white;
     border-bottom: 0.1rem solid #b0b0b082;
@@ -78,21 +72,21 @@ input:focus.auto-input {
     padding-right: 1rem;
 }
 
-.suggestion {
+.pdl-suggestion {
     width: 100%;
     padding: .5rem;
     justify-content: space-between;
 }
 
-.suggestion-name {
+.pdl-suggestion-name {
     padding-left: .75rem;
 }
 
-.suggestion-count {
+.pdl-suggestion-count {
     padding-right: .75rem;
 }
 
-.suggestions-pending {
+.pdl-suggestions-pending {
     position: absolute;
     z-index: 99;
     width: 100%;
@@ -103,7 +97,7 @@ input:focus.auto-input {
     border-right: 0.1rem solid #b0b0b082;
 }
 
-.suggestions-error {
+.pdl-suggestions-error {
     position: absolute;
     z-index: 99;
     width: 100%;
@@ -125,7 +119,7 @@ input:focus.auto-input {
     }
 }
 
-.loading-spinner {
+.pdl-loading-spinner {
     margin-left: .2rem;
     width: 1.095rem;
     height: 1rem;

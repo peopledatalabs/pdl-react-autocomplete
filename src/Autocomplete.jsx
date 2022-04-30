@@ -9,11 +9,11 @@ const [ searchTerm, setSearchTerm ] = useState('');
     const [ focus, setFocus ] = useState(false)
     const [ errorMessage, setErrorMessage ] = useState('');
     const [ isLoading , setIsLoading ] = useState(false)
-    const [ isActive, setIsActive ] = useState(0) 
-    
+    const [ isActive, setIsActive ] = useState(0)
+
     const timer = useRef(null)
 
-    const autoInput = document.querySelector('.auto-input')
+    const autoInput = document.querySelector('.pdl-auto-input')
 
     useEffect(() => {
         if (focus) debounce(fetchResults)()
@@ -28,7 +28,7 @@ const [ searchTerm, setSearchTerm ] = useState('');
             }, delay)
         }
     }
-    
+
     const fetchResults = async () => {
         setErrorMessage('')
         setIsActive(0)
@@ -43,10 +43,10 @@ const [ searchTerm, setSearchTerm ] = useState('');
             clearResults()
             return
         }
-        
+
         let reqURL = `https://api.peopledatalabs.com/v5/autocomplete?field=${field}&text=${searchTerm}`
             if (size !== undefined) reqURL += `&size=${size}`
-        
+
         const response = await fetch(reqURL, { headers: {
             "X-API-Key": `${apiKey}`
         }})
@@ -98,11 +98,10 @@ const [ searchTerm, setSearchTerm ] = useState('');
     }
 
     const selectHandler = (e) => {
-        console.log(e.key)
         if (searchResults.length === 0) return
 
         if (e.type === 'mousedown'){
-            let selected = document.querySelector('.selected')
+            let selected = document.querySelector('.pdl-selected')
             let selectedTerm = selected.getAttribute('value')
             setSearchTerm(selectedTerm)
             onTermSelected(selectedTerm)
@@ -112,7 +111,7 @@ const [ searchTerm, setSearchTerm ] = useState('');
 
         switch (e.key) {
             case 'Enter':
-                let selected = document.querySelector('.selected')
+                let selected = document.querySelector('.pdl-selected')
                 let selectedTerm = selected.getAttribute('value')
                 setSearchTerm(selectedTerm)
                 onTermSelected(selectedTerm)
@@ -124,17 +123,17 @@ const [ searchTerm, setSearchTerm ] = useState('');
                 } else {
                     setIsActive((isActive) => isActive + 1)
                 }
-                break;                
+                break;
             case 'ArrowUp':
                 if (isActive === 0 || isActive === null) {
                     setIsActive(searchResults.length - 1)
                 } else {
                     setIsActive((isActive) => isActive - 1)
-                }       
+                }
                 break;
             case 'Escape':
-                blur()             
-                break;            
+                blur()
+                break;
             default:
                 break;
         }
@@ -157,7 +156,7 @@ const [ searchTerm, setSearchTerm ] = useState('');
             case 'major':
                 return 'IE: ["entrepreneurship]'
                 break;
-            case 'region':  
+            case 'region':
                 return 'IE: ["california, united states"]'
                 break;
             case 'role':
@@ -181,10 +180,10 @@ const [ searchTerm, setSearchTerm ] = useState('');
     }
 
     return(
-        <div className="autocomplete-wrapper">
-            <div className={`auto-input-wrapper df row ${focus ? 'input-wrapper-focus' : ''}`}>
+        <div className="pdl-autocomplete-wrapper">
+            <div className={`pdl-auto-input-wrapper pdl-df pdl-row ${focus ? 'pdl-input-wrapper-focus' : ''}`}>
                 <input
-                    className="auto-input"
+                    className="pdl-auto-input"
                     placeholder={placeholderText()}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.currentTarget.value)}
@@ -192,37 +191,37 @@ const [ searchTerm, setSearchTerm ] = useState('');
                     onBlur={() => setFocus(false)}
                     onKeyDown={(e) => selectHandler(e)}
                 ></input>
-                <div className={`loading-spinner ${isLoading ? '' : 'dn'}`}/>
+                <div className={`pdl-loading-spinner ${isLoading ? '' : 'pdl-dn'}`}/>
             </div>
-            <div className="autocomplete">
-                <div className={`suggestions ${!focus || !searchResults.length ? 'dn' : ''}`}>
-                    {(searchResults.length > 0) ? 
-                        searchResults.map((searchResult, idx) => 
+            <div className="pdl-autocomplete">
+                <div className={`pdl-suggestions ${!focus || !searchResults.length ? 'pdl-dn' : ''}`}>
+                    {(searchResults.length > 0) ?
+                        searchResults.map((searchResult, idx) =>
                             <div
-                                key={idx} 
-                                className={`suggestion df row ${idx === isActive ? 'selected' : ''}`}
+                                key={idx}
+                                className={`pdl-suggestion pdl-df pdl-row ${idx === isActive ? 'pdl-selected' : ''}`}
                                 value={searchResult.name}
                                 data-idx={idx}
                                 onMouseOver={(e) => setIsActive(parseInt(e.currentTarget.dataset.idx))}
                                 onMouseDown={(e) => selectHandler(e)}
                             >
-                                <div className="suggestion-name">
-                                    {searchResult.name} 
+                                <div className="pdl-suggestion-name">
+                                    {searchResult.name}
                                 </div>
-                                <div className="suggestion-count">
+                                <div className="pdl-suggestion-count">
                                     {searchResult.count ? `(${searchResult.count.toLocaleString('en-US')})` : null}
                                 </div>
                             </div>
                         ) : null }
                 </div>
-                <div 
-                    className={`suggestions-pending 
-                        ${(focus === false) || isLoading || errorMessage || (searchResults.length > 0) ? 'dn' : ''}`}
+                <div
+                    className={`pdl-suggestions-pending
+                        ${(focus === false) || isLoading || errorMessage || (searchResults.length > 0) ? 'pdl-dn' : ''}`}
                 >
                     Start typing to get suggestions
                 </div>
-                <div className={`suggestions-error
-                        ${(errorMessage.length === 0) || (!focus) || (searchTerm.length === 0) ? 'dn' : ''}`}
+                <div className={`pdl-suggestions-error
+                        ${(errorMessage.length === 0) || (!focus) || (searchTerm.length === 0) ? 'pdl-dn' : ''}`}
                 >
                     {errorMessage}
                 </div>

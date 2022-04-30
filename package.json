@@ -19,7 +19,7 @@
     "dist/**"
   ],
   "scripts": {
-    "start": "parcel watch",
+    "start": "parcel watch -p 3006",
     "build": "parcel build"
   },
   "repository": {
