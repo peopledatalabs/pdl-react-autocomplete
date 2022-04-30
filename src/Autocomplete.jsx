@@ -2,14 +2,14 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import './index.css'
 
-const Autocomplete = ({ field = 'company', size, onTermSelected = (term) => console.log(term) }) => {
+const Autocomplete = ({ field, size, onTermSelected, apiKey}) => {
 
-    const [ searchTerm, setSearchTerm ] = useState('');
+const [ searchTerm, setSearchTerm ] = useState('');
     const [ searchResults, setSearchResults ] = useState([]);
     const [ focus, setFocus ] = useState(false)
     const [ errorMessage, setErrorMessage ] = useState('');
     const [ isLoading , setIsLoading ] = useState(false)
-    const [ isKeyActive, setIsKeyActive ] = useState(0)
+    const [ isActive, setIsActive ] = useState(0) 
     
     const timer = useRef(null)
 
@@ -31,7 +31,7 @@ const Autocomplete = ({ field = 'company', size, onTermSelected = (term) => cons
     
     const fetchResults = async () => {
         setErrorMessage('')
-        setIsKeyActive(0)
+        setIsActive(0)
 
         if (!focus) return
 
@@ -48,7 +48,7 @@ const Autocomplete = ({ field = 'company', size, onTermSelected = (term) => cons
             if (size !== undefined) reqURL += `&size=${size}`
         
         const response = await fetch(reqURL, { headers: {
-            "X-API-Key": `${process.env.REACT_APP_API_KEY}`
+            "X-API-Key": `${apiKey}`
         }})
 
         const data = await response.json()
@@ -92,43 +92,51 @@ const Autocomplete = ({ field = 'company', size, onTermSelected = (term) => cons
         setSearchResults([])
     }
 
-    const mouseClickHandler = (e) => {
-        let mouseSelected = document.querySelector(".mouseover")
-        let mouseSelectedTerm = mouseSelected.getAttribute("value")
-        setSearchTerm(mouseSelectedTerm)
-        onTermSelected(mouseSelectedTerm)
+    const blur = () => {
         setFocus(false)
         autoInput.blur()
     }
 
-    const keyDownHandler = (e) => {
-        if (searchResults.length > 0) {
-            switch (e.key) {
-                case 'Enter':
-                    let keySelected = document.querySelector('.keyselected')
-                    let keySelectedTerm = keySelected.getAttribute('value')
-                    setSearchTerm(keySelectedTerm)
-                    onTermSelected(keySelectedTerm)
-                    setFocus(false)
-                    autoInput.blur()
-                    break;
-                case 'ArrowDown':
-                    if (isKeyActive === (searchResults.length - 1) || (isKeyActive === null)){
-                        setIsKeyActive(0)
-                    } else {
-                        setIsKeyActive((isKeyActive) => isKeyActive + 1)
-                    }
-                    break;                
-                case 'ArrowUp':
-                    if (isKeyActive === 0 || isKeyActive === null) {
-                        setIsKeyActive(searchResults.length - 1)
-                    } else {
-                        setIsKeyActive((isKeyActive) => isKeyActive - 1)
-                }                    
+    const selectHandler = (e) => {
+        console.log(e.key)
+        if (searchResults.length === 0) return
+
+        if (e.type === 'mousedown'){
+            let selected = document.querySelector('.selected')
+            let selectedTerm = selected.getAttribute('value')
+            setSearchTerm(selectedTerm)
+            onTermSelected(selectedTerm)
+            blur()
+            return
+        }
+
+        switch (e.key) {
+            case 'Enter':
+                let selected = document.querySelector('.selected')
+                let selectedTerm = selected.getAttribute('value')
+                setSearchTerm(selectedTerm)
+                onTermSelected(selectedTerm)
+                blur()
+                break;
+            case 'ArrowDown':
+                if (isActive === (searchResults.length - 1) || (isActive === null)){
+                    setIsActive(0)
+                } else {
+                    setIsActive((isActive) => isActive + 1)
+                }
+                break;                
+            case 'ArrowUp':
+                if (isActive === 0 || isActive === null) {
+                    setIsActive(searchResults.length - 1)
+                } else {
+                    setIsActive((isActive) => isActive - 1)
+                }       
+                break;
+            case 'Escape':
+                blur()             
                 break;            
-                default:
-                    break;
-            }
+            default:
+                break;
         }
     }
 
@@ -182,7 +190,7 @@ const Autocomplete = ({ field = 'company', size, onTermSelected = (term) => cons
                     onChange={(e) => setSearchTerm(e.currentTarget.value)}
                     onFocus={() => setFocus(true)}
                     onBlur={() => setFocus(false)}
-                    onKeyDown={(e) => keyDownHandler(e)}
+                    onKeyDown={(e) => selectHandler(e)}
                 ></input>
                 <div className={`loading-spinner ${isLoading ? '' : 'dn'}`}/>
             </div>
@@ -192,14 +200,11 @@ const Autocomplete = ({ field = 'company', size, onTermSelected = (term) => cons
                         searchResults.map((searchResult, idx) => 
                             <div
                                 key={idx} 
-                                className={`suggestion df row
-                                    ${idx === isKeyActive ? 'keyselected' : ''}
-                                    ${idx === (searchResults.length - 1) ? 'bb' : ''}`}
+                                className={`suggestion df row ${idx === isActive ? 'selected' : ''}`}
                                 value={searchResult.name}
                                 data-idx={idx}
-                                onMouseDown={(e) => mouseClickHandler(e)}
-                                onMouseOver={(e) => e.currentTarget.classList.add("mouseover")}
-                                onMouseLeave={(e) => e.currentTarget.classList.remove('mouseover')}
+                                onMouseOver={(e) => setIsActive(parseInt(e.currentTarget.dataset.idx))}
+                                onMouseDown={(e) => selectHandler(e)}
                             >
                                 <div className="suggestion-name">
                                     {searchResult.name} 

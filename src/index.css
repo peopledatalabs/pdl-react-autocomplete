@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-.keyselected {
+.selected {
     background-color: #C4ADFF;
 }
 
@@ -69,25 +69,19 @@ input:focus.auto-input {
     background-color: white;
 }
 
-.bb {
-    border-bottom: 0.1rem solid #b0b0b082;
-}
-
 .suggestions {
     width: 100%;
     background-color: white;
+    border-bottom: 0.1rem solid #b0b0b082;
+    border-left: 0.1rem solid #b0b0b082;
+    border-right: 0.1rem solid #b0b0b082;
+    padding-right: 1rem;
 }
 
 .suggestion {
     width: 100%;
     padding: .5rem;
-    border-left: 0.1rem solid #b0b0b082;
-    border-right: 0.1rem solid #b0b0b082;
     justify-content: space-between;
-}
-
-.suggestion:hover {
-    background-color: #C4ADFF
 }
 
 .suggestion-name {
