@@ -1,6 +1,7 @@
 {
-  "name": "@davidoh15/pdl-react-autocomplete",
+  "name": "pdl-react-autocomplete",
   "version": "1.0.0",
+  "description": "A react component for the People Data Labs Autocomplete API",
   "source": "src/index.js",
   "main": "dist/main.js",
   "module": "dist/index.mjs",
@@ -21,9 +22,23 @@
     "start": "parcel watch",
     "build": "parcel build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peopledatalabs/pdl-react-autocomplete.git"
+  },
+  "keywords": [
+    "peopledatalabs",
+    "People Data Labs",
+    "autocomplete",
+    "react",
+    "react component"
+  ],
   "repository": "https://github.com/peopledatalabs/pdl-react-autocomplete.git",
-  "author": "David Oh <103519873+davidoh15@users.noreply.github.com>",
+  "author": "People Data Labs",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peopledatalabs/pdl-react-autocomplete/issues"
+  },
   "devDependencies": {
     "parcel": "^2.5.0",
     "@parcel/transformer-react-refresh-wrap": "^2.5.0"
