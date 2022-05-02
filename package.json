@@ -23,10 +23,7 @@
     "build": "parcel build",
     "pub": "yarn run build && yarn publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/peopledatalabs/pdl-react-autocomplete.git"
-  },
+  "repository": "https://github.com/peopledatalabs/pdl-react-autocomplete.git",
   "keywords": [
     "peopledatalabs",
     "People Data Labs",
@@ -34,15 +31,21 @@
     "react",
     "react component"
   ],
-  "repository": "https://github.com/peopledatalabs/pdl-react-autocomplete.git",
   "author": "People Data Labs",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/peopledatalabs/pdl-react-autocomplete/issues"
   },
   "devDependencies": {
+    "@parcel/transformer-react-refresh-wrap": "^2.5.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "parcel": "^2.5.0",
-    "@parcel/transformer-react-refresh-wrap": "^2.5.0"
+    "eslint-plugin-unused-imports": "^2.0.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",

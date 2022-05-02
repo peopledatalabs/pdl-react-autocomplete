@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import './index.css'
+import './index.css';
 
 const Autocomplete = ({ field, size, onTermSelected, apiKey}) => {
 
