@@ -16,7 +16,7 @@ module.exports = {
   },
   plugins: [
     'react',
-    'unused-imports',
+    // 'unused-imports',
   ],
   rules: {
     'react/no-danger': 'off',
@@ -57,7 +57,7 @@ module.exports = {
     'react/sort-comp': 'off',
     'react/no-access-state-in-setstate': 'off',
     'class-methods-use-this': 'off',
-    'unused-imports/no-unused-imports': 'error',
+    // 'unused-imports/no-unused-imports': 'error',
     'react/require-default-props': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
   },
