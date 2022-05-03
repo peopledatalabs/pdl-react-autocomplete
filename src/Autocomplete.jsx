@@ -1,4 +1,4 @@
-// eslint-disable-next-line
+// eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 
@@ -16,18 +16,8 @@ function Autocomplete({
 
   const autoInput = document.querySelector('.pdl-auto-input');
 
-  useEffect(() => {
-    if (focus) debounce(fetchResults)();
-  }, [searchTerm, focus]);
-
-  const debounce = (cb, delay = 250) => {
-    clearTimeout(timer.current);
-
-    return () => {
-      timer.current = setTimeout(() => {
-        cb();
-      }, delay);
-    };
+  const clearResults = () => {
+    setSearchResults([]);
   };
 
   const fetchResults = async () => {
@@ -91,9 +81,19 @@ function Autocomplete({
     setIsLoading(false);
   };
 
-  const clearResults = () => {
-    setSearchResults([]);
+  const debounce = (cb, delay = 250) => {
+    clearTimeout(timer.current);
+
+    return () => {
+      timer.current = setTimeout(() => {
+        cb();
+      }, delay);
+    };
   };
+
+  useEffect(() => {
+    if (focus) debounce(fetchResults)();
+  }, [searchTerm, focus]);
 
   const blur = () => {
     setFocus(false);
@@ -125,6 +125,7 @@ function Autocomplete({
         if (isActive === (searchResults.length - 1) || (isActive === null)) {
           setIsActive(0);
         } else {
+          // eslint-disable-next-line
           setIsActive((isActive) => isActive + 1);
         }
         break;
@@ -132,6 +133,7 @@ function Autocomplete({
         if (isActive === 0 || isActive === null) {
           setIsActive(searchResults.length - 1);
         } else {
+          // eslint-disable-next-line
           setIsActive((isActive) => isActive - 1);
         }
         break;
@@ -168,6 +170,7 @@ function Autocomplete({
       case 'title':
         return 'IE: co-founder and chief executive officer';
       default:
+        return null;
     }
   };
 
@@ -191,6 +194,7 @@ function Autocomplete({
             ? searchResults.map((searchResult, idx) => (
               // eslint-disable-next-line
               <div
+                // eslint-disable-next-line
                 key={idx}
                 className={`pdl-suggestion pdl-df pdl-row ${idx === isActive ? 'pdl-selected' : ''}`}
                 value={searchResult.name}
