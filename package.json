@@ -1,0 +1,55 @@
+{
+  "name": "pdl-react-autocomplete",
+  "version": "1.0.0",
+  "description": "A react component for the People Data Labs Autocomplete API",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "module": "dist/index.mjs",
+  "targets": {
+    "main": {
+      "includeNodeModules": false,
+      "isLibrary": true
+    },
+    "module": {
+      "includeNodeModules": false,
+      "isLibrary": true
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "dev": "parcel watch -p 3006",
+    "build": "parcel build",
+    "pub": "yarn run build && yarn publish"
+  },
+  "repository": "https://github.com/peopledatalabs/pdl-react-autocomplete.git",
+  "keywords": [
+    "peopledatalabs",
+    "People Data Labs",
+    "autocomplete",
+    "react",
+    "react component"
+  ],
+  "author": "People Data Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peopledatalabs/pdl-react-autocomplete/issues"
+  },
+  "devDependencies": {
+    "@parcel/transformer-react-refresh-wrap": "^2.5.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "parcel": "^2.5.0"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
+  },
+  "dependencies": {}
+}
