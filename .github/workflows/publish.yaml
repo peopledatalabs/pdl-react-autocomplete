@@ -3,10 +3,9 @@ name: Publish Package to NPM
 on:
   release:
     types: [published]
-    
+
 jobs:
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
