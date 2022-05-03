@@ -3,12 +3,12 @@
   <a href="">
     <img src="https://img.shields.io/badge/repo%20status-Active-limegreen" alt="Repo Status">
   </a>&nbsp;
-  <a href="https://www.npmjs.com/peopledatalabs">
-    <img src="https://img.shields.io/npm/v/peopledatalabs.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen" alt="PDL React Autocomplete" />
+  <a href="https://www.npmjs.com/pdl-react-autocomplete">
+    <img src="https://img.shields.io/npm/v/pdl-react-autocomplete.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen" alt="PDL React Autocomplete" />
   </a>&nbsp;
 </p>
 
-This library allows users to search the PDL Autocomplete API for valid Search API query values within a specific field along with the number of available records for each suggestion, receive autocompetion suggestions in a drop down of options, and then select a suggestion to be passed into a callback function. 
+This library allows users to search the PDL Autocomplete API for valid Search API query values within a specific field along with the number of available records for each suggestion, receive autocompetion suggestions in a drop down of options, and then select a suggestion to be passed into a callback function.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/103519873/166407827-c554983e-4b8e-4ba7-89a9-b851167f0b47.gif"/>
@@ -23,14 +23,14 @@ For example, a user queries the 'company' field with the text of 'goog' as a sea
 
 ## 🔧 Installation <a name="installation"></a>
 
-1. Pull the package from the npm repository: 
+1. Pull the package from the npm repository:
 
 ```bash
-yarn add @davidoh15/pdl-react-autocomplete
+yarn add pdl-react-autocomplete
 ```
 or
 ```bash
-npm i @davidoh15/pdl-react-autocomplete
+npm i pdl-react-autocomplete
 ```
 
 2. Sign up for a [free PDL API key](https://www.peopledatalabs.com/signup)
@@ -39,7 +39,7 @@ npm i @davidoh15/pdl-react-autocomplete
 
 First, import the component library:
 ```js
-import Autocomplete from '@davidoh15/pdl-react-autocomplete';
+import Autocomplete from 'pdl-react-autocomplete';
 ```
 
 Then, use the library like any other React component:
@@ -56,7 +56,7 @@ Then, use the library like any other React component:
   );
 ```
 
-## 📘 Documentation <a name="documentation"></a> 
+## 📘 Documentation <a name="documentation"></a>
 The Autocomplete API endpoint is documented here: https://docs.peopledatalabs.com/docs/autocomplete-api
 
 ### Props
@@ -87,7 +87,7 @@ The Autocomplete API endpoint is documented here: https://docs.peopledatalabs.co
     - Number of results returned for autocompletion. Must be between 1 and 100. Set to 10 by default.
 
 ### Styling
-Refer to the styles in this [css file](https://github.com/peopledatalabs/pdl-react-autocomplete/blob/first/src/index.css) and override the styling of an existing class by creating a new code block with the same class name, but with the '!important' tag. 
+Refer to the styles in this [css file](https://github.com/peopledatalabs/pdl-react-autocomplete/blob/first/src/index.css) and override the styling of an existing class by creating a new code block with the same class name, but with the '!important' tag.
 ```css
 .pdl-suggestion {
     width: 100%;
@@ -96,8 +96,7 @@ Refer to the styles in this [css file](https://github.com/peopledatalabs/pdl-rea
 }
 
 /* your styling override */
-.pdl-suggestion { 
+.pdl-suggestion {
     background-color: red !important;
 }
 ```
-
