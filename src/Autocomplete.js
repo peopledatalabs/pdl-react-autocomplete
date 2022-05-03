@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 

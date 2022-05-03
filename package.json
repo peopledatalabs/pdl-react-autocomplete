@@ -45,9 +45,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "parcel": "^2.5.0",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "parcel": "^2.5.0"
   },
   "peerDependencies": {
     "react": ">= 16.8.0",
