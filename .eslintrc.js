@@ -20,5 +20,9 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off',
+    'react/jsx-filename-extension': 'off',
+    'jsx-a11y/mouse-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'react/no-array-index-key': 'off',
   },
 };

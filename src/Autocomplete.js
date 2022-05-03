@@ -125,16 +125,16 @@ function Autocomplete({
         if (isActive === (searchResults.length - 1) || (isActive === null)) {
           setIsActive(0);
         } else {
-          // eslint-disable-next-line
-          setIsActive((isActive) => isActive + 1);
+          const toAdd = isActive;
+          setIsActive(toAdd + 1);
         }
         break;
       case 'ArrowUp':
         if (isActive === 0 || isActive === null) {
           setIsActive(searchResults.length - 1);
         } else {
-          // eslint-disable-next-line
-          setIsActive((isActive) => isActive - 1);
+          const toSubtract = isActive;
+          setIsActive(toSubtract - 1);
         }
         break;
       case 'Escape':
@@ -156,7 +156,7 @@ function Autocomplete({
       case 'location':
         return 'IE: berkeley, california, united states';
       case 'major':
-        return 'IE: ["entrepreneurship]';
+        return 'IE: ["entrepreneurship"]';
       case 'region':
         return 'IE: ["california, united states"]';
       case 'role':
@@ -170,7 +170,7 @@ function Autocomplete({
       case 'title':
         return 'IE: co-founder and chief executive officer';
       default:
-        return null;
+        return '';
     }
   };
 
@@ -192,9 +192,7 @@ function Autocomplete({
         <div className={`pdl-suggestions ${!focus || !searchResults.length ? 'pdl-dn' : ''}`}>
           {(searchResults.length > 0)
             ? searchResults.map((searchResult, idx) => (
-              // eslint-disable-next-line
               <div
-                // eslint-disable-next-line
                 key={idx}
                 className={`pdl-suggestion pdl-df pdl-row ${idx === isActive ? 'pdl-selected' : ''}`}
                 value={searchResult.name}
@@ -211,14 +209,13 @@ function Autocomplete({
               </div>
             )) : null}
         </div>
-        <div
-          className={`pdl-suggestions-pending
-                        ${(focus === false) || isLoading || errorMessage || (searchResults.length > 0) ? 'pdl-dn' : ''}`}
+        <div className={`pdl-suggestions-pending
+          ${(focus === false) || isLoading || errorMessage || (searchResults.length > 0) ? 'pdl-dn' : ''}`}
         >
           Start typing to get suggestions
         </div>
         <div className={`pdl-suggestions-error
-                        ${(errorMessage.length === 0) || (!focus) || (searchTerm.length === 0) ? 'pdl-dn' : ''}`}
+          ${(errorMessage.length === 0) || (!focus) || (searchTerm.length === 0) ? 'pdl-dn' : ''}`}
         >
           {errorMessage}
         </div>
