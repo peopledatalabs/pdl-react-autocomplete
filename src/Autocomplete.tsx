@@ -9,11 +9,11 @@ interface AutocompleteProps {
   apiKey: string
 }
 
-const Autocomplete = ({
+function Autocomplete({
   field, size, onTermSelected, apiKey,
-}: AutocompleteProps) => {
+}: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState < { name: string, count: number }[] > ([]);
+  const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
   const [focus, setFocus] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +34,7 @@ const Autocomplete = ({
     setIsLoading(true);
 
     if (searchTerm.length === 0) {
-      let debouncedTimeout: null | ReturnType<typeof setTimeout> = timer.current
+      const debouncedTimeout: null | ReturnType<typeof setTimeout> = timer.current;
       setIsLoading(false);
       if (debouncedTimeout !== null) clearTimeout(debouncedTimeout); //
 
@@ -106,7 +106,7 @@ const Autocomplete = ({
   const blur = () => {
     setFocus(false);
     const autoInput: HTMLInputElement | null = document.querySelector('.pdl-auto-input');
-    if (autoInput !== null) { autoInput.blur() };
+    if (autoInput !== null) { autoInput.blur(); }
   };
 
   const mouseDownHandler = (e: React.MouseEvent) => {
@@ -125,7 +125,7 @@ const Autocomplete = ({
       }
     }
     blur();
-  }
+  };
 
   const keyDownHandler = (e: React.KeyboardEvent) => {
     if (searchResults.length === 0) return;
@@ -224,8 +224,8 @@ const Autocomplete = ({
                 data-value={searchResult.name}
                 data-idx={idx}
                 onMouseOver={(e) => {
-                  const indexString: string | undefined = e.currentTarget.dataset['idx']
-                  if (indexString) setIsActive(parseInt(indexString, 10))
+                  const indexString: string | undefined = e.currentTarget.dataset.idx;
+                  if (indexString) setIsActive(parseInt(indexString, 10));
                 }}
                 onMouseDown={(e) => mouseDownHandler(e)}
               >
