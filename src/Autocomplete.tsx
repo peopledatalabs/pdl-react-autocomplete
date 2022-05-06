@@ -2,11 +2,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 
+interface AutocompleteProps {
+  field: string,
+  size?: number,
+  onTermSelected: (term: string) => void,
+  apiKey: string
+}
+
 function Autocomplete({
   field, size, onTermSelected, apiKey,
-}) {
+}: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
   const [focus, setFocus] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -14,13 +21,11 @@ function Autocomplete({
 
   const timer = useRef(null);
 
-  const autoInput = document.querySelector('.pdl-auto-input');
-
   const clearResults = () => {
     setSearchResults([]);
   };
 
-  const fetchResults = async () => {
+  const fetchResults = async (): Promise<void> => {
     setErrorMessage('');
     setIsActive(0);
 
@@ -29,8 +34,10 @@ function Autocomplete({
     setIsLoading(true);
 
     if (searchTerm.length === 0) {
+      const debouncedTimeout: null | ReturnType<typeof setTimeout> = timer.current;
       setIsLoading(false);
-      clearTimeout(timer.current);
+      if (debouncedTimeout !== null) clearTimeout(debouncedTimeout); //
+
       clearResults();
       return;
     }
@@ -81,11 +88,12 @@ function Autocomplete({
     setIsLoading(false);
   };
 
-  const debounce = (cb, delay = 250) => {
-    clearTimeout(timer.current);
+  const debounce = (cb: () => void, delay = 250) => {
+    let debouncedTimeout: ReturnType<typeof setTimeout> | null = timer.current;
+    if (debouncedTimeout !== null) clearTimeout(debouncedTimeout);
 
     return () => {
-      timer.current = setTimeout(() => {
+      debouncedTimeout = setTimeout(() => {
         cb();
       }, delay);
     };
@@ -97,51 +105,69 @@ function Autocomplete({
 
   const blur = () => {
     setFocus(false);
-    autoInput.blur();
+    const autoInput: HTMLInputElement | null = document.querySelector('.pdl-auto-input');
+    if (autoInput !== null) { autoInput.blur(); }
   };
 
-  const selectHandler = (e) => {
+  const mouseDownHandler = (e: React.MouseEvent) => {
     if (searchResults.length === 0) return;
 
     if (e.type === 'mousedown') {
-      const selected = document.querySelector('.pdl-selected');
-      const selectedTerm = selected.getAttribute('value');
-      setSearchTerm(selectedTerm);
-      onTermSelected(selectedTerm);
-      blur();
-      return;
-    }
+      const selected: HTMLInputElement | null = document?.querySelector('.pdl-selected');
 
-    switch (e.key) {
-      case 'Enter': {
-        const selected = document.querySelector('.pdl-selected');
-        const selectedTerm = selected.getAttribute('value');
-        setSearchTerm(selectedTerm);
-        onTermSelected(selectedTerm);
-        blur();
-        break;
+      if (selected !== null) {
+        const selectedTerm: string | null = selected?.getAttribute('data-value');
+
+        if (selectedTerm !== null) {
+          setSearchTerm(selectedTerm);
+          onTermSelected(selectedTerm);
+        }
       }
-      case 'ArrowDown':
-        if (isActive === (searchResults.length - 1) || (isActive === null)) {
-          setIsActive(0);
-        } else {
-          const toAdd = isActive;
-          setIsActive(toAdd + 1);
+    }
+    blur();
+  };
+
+  const keyDownHandler = (e: React.KeyboardEvent) => {
+    if (searchResults.length === 0) return;
+
+    if (e.type === 'keydown') {
+      switch (e.key) {
+        case 'Enter': {
+          const selected: HTMLInputElement | null = document.querySelector('.pdl-selected');
+
+          if (selected !== null) {
+            const selectedTerm = selected.getAttribute('data-value');
+
+            if (selectedTerm !== null) {
+              setSearchTerm(selectedTerm);
+              onTermSelected(selectedTerm);
+            }
+          }
+          blur();
+          break;
         }
-        break;
-      case 'ArrowUp':
-        if (isActive === 0 || isActive === null) {
-          setIsActive(searchResults.length - 1);
-        } else {
-          const toSubtract = isActive;
-          setIsActive(toSubtract - 1);
-        }
-        break;
-      case 'Escape':
-        blur();
-        break;
-      default:
-        break;
+        case 'ArrowDown':
+          if (isActive === (searchResults.length - 1) || (isActive === null)) {
+            setIsActive(0);
+          } else {
+            const toAdd = isActive;
+            setIsActive(toAdd + 1);
+          }
+          break;
+        case 'ArrowUp':
+          if (isActive === 0 || isActive === null) {
+            setIsActive(searchResults.length - 1);
+          } else {
+            const toSubtract = isActive;
+            setIsActive(toSubtract - 1);
+          }
+          break;
+        case 'Escape':
+          blur();
+          break;
+        default:
+          break;
+      }
     }
   };
 
@@ -184,7 +210,7 @@ function Autocomplete({
           onChange={(e) => setSearchTerm(e.currentTarget.value)}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
-          onKeyDown={(e) => selectHandler(e)}
+          onKeyDown={(e) => keyDownHandler(e)}
         />
         <div className={`pdl-loading-spinner ${isLoading ? '' : 'pdl-dn'}`} />
       </div>
@@ -195,10 +221,13 @@ function Autocomplete({
               <div
                 key={idx}
                 className={`pdl-suggestion pdl-df pdl-row ${idx === isActive ? 'pdl-selected' : ''}`}
-                value={searchResult.name}
+                data-value={searchResult.name}
                 data-idx={idx}
-                onMouseOver={(e) => setIsActive(parseInt(e.currentTarget.dataset.idx, 10))}
-                onMouseDown={(e) => selectHandler(e)}
+                onMouseOver={(e) => {
+                  const indexString: string | undefined = e.currentTarget.dataset.idx;
+                  if (indexString) setIsActive(parseInt(indexString, 10));
+                }}
+                onMouseDown={(e) => mouseDownHandler(e)}
               >
                 <div className="pdl-suggestion-name">
                   {searchResult.name}

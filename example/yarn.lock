@@ -6323,6 +6323,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+pdl-react-autocomplete@*:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/pdl-react-autocomplete/-/pdl-react-autocomplete-1.0.0.tgz#64ed25b6e12afa1e37d09a4645c08af62dd2b9be"
+  integrity sha512-cSOL0XBnOfFxpOIVjkK+KDseIMHHn8Lysc1Q1v/3QMjqW5+88WCNNDQA81xc1JYwh3heh7wo7rmnki50FpTbvA==
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"

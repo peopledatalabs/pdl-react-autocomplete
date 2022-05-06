@@ -1,0 +1,5 @@
+{
+  "extends": "./pdl-tsconfig/react-library.json",
+  "include": ["src", ".eslintrc.js"],
+  "exclude": ["dist", "example", "node_modules"]
+}
