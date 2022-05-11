@@ -76,6 +76,7 @@ input:focus.pdl-auto-input {
     width: 100%;
     padding: .5rem;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .pdl-suggestion-name {

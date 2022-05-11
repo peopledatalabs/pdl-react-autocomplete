@@ -11,7 +11,7 @@
 This library allows users to search the PDL Autocomplete API for valid Search API query values within a specific field along with the number of available records for each suggestion, receive autocompetion suggestions in a drop down of options, and then select a suggestion to be passed into a callback function.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/103519873/166407827-c554983e-4b8e-4ba7-89a9-b851167f0b47.gif"/>
+  <img src="https://user-images.githubusercontent.com/103519873/167505702-34fc2580-1ea3-47a4-83f0-c9f5a6fb6aeb.gif"/>
 </p>
 
 For example, a user queries the 'company' field with the text of 'goog' as a search term, and the autocomplete component will show a dropdown of options that most closely match this search, such as 'google'. The user either clicks or uses their keyboard to select 'google', and 'google' gets passed as the argument to a callback function has been passed down to this component as a prop.

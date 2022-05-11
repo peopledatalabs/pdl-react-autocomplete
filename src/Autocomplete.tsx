@@ -113,10 +113,10 @@ function Autocomplete({
     if (searchResults.length === 0) return;
 
     if (e.type === 'mousedown') {
-      const selected: HTMLInputElement | null = document?.querySelector('.pdl-selected');
+      const selected: HTMLInputElement | null = document.querySelector('.pdl-selected');
 
       if (selected !== null) {
-        const selectedTerm: string | null = selected?.getAttribute('data-value');
+        const selectedTerm: string | null = selected.getAttribute('data-value');
 
         if (selectedTerm !== null) {
           setSearchTerm(selectedTerm);
