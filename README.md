@@ -103,4 +103,4 @@ Refer to the styles in this [css file](https://github.com/peopledatalabs/pdl-rea
 ```
 
 ## 🔒 Security Disclaimer <a name="security"></a>
-This library should be used as an internal tool or as a proof of concept as it fires off requests to the PDL Autocomplete API from the client due to the nature of being a react component and API Keys being all encompassing at PDL.  We highly suggest referencing the components code base for spinning up your own version but accessing the PDL Autocomplete via a proxy server and not using this in a public production environment.
+This library should be used as an internal tool or as a proof of concept as it fires off requests to the PDL Autocomplete API from the client.  This is due to the nature of being a react component and API Keys being all encompassing at PDL.  We highly suggest referencing the component's code base for spinning up your own version but accessing the PDL Autocomplete API via a proxy server and not using this in a public production environment.
