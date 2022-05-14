@@ -20,6 +20,7 @@ For example, a user queries the 'company' field with the text of 'goog' as a sea
 - [🔧 Installation](#installation)
 - [🚀 Usage](#usage)
 - [📘 Documentation](#documentation)
+- [🔒 Security Disclaimer](#security)
 
 ## 🔧 Installation <a name="installation"></a>
 
@@ -100,3 +101,6 @@ Refer to the styles in this [css file](https://github.com/peopledatalabs/pdl-rea
     background-color: red !important;
 }
 ```
+
+## 🔒 Security Disclaimer <a name="security"></a>
+This library should be used as an internal tool or as a proof of concept as it fires off requests to the PDL Autocomplete API from the client due to the nature of being a react component and API Keys being all encompassing at PDL.  We highly suggest referencing the components code base for spinning up your own version but accessing the PDL Autocomplete via a proxy server and not using this in a public production environment.
