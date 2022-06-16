@@ -6,11 +6,12 @@ interface AutocompleteProps {
   field: string,
   size?: number,
   onTermSelected: (term: string) => void,
-  apiKey: string
+  apiKey: string,
+  placeholder: string,
 }
 
 function Autocomplete({
-  field, size, onTermSelected, apiKey,
+  field, size, onTermSelected, apiKey, placeholder
 }: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
@@ -205,7 +206,7 @@ function Autocomplete({
       <div className={`pdl-auto-input-wrapper pdl-df pdl-row ${focus ? 'pdl-input-wrapper-focus' : ''}`}>
         <input
           className="pdl-auto-input"
-          placeholder={placeholderText()}
+          placeholder={placeholder || placeholderText()}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.currentTarget.value)}
           onFocus={() => setFocus(true)}
