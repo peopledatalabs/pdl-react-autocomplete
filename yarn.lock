@@ -827,13 +827,22 @@
   dependencies:
     "@parcel/plugin" "2.5.0"
 
-"@parcel/transformer-react-refresh-wrap@2.5.0", "@parcel/transformer-react-refresh-wrap@^2.5.0":
+"@parcel/transformer-react-refresh-wrap@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@parcel/transformer-react-refresh-wrap/-/transformer-react-refresh-wrap-2.5.0.tgz#e1ef71218efb21a78677e8770fb6bcf753caf35c"
   integrity sha512-VPqVBxhTN4OQwcjsdyxrv+smjAm4s6dbSWAplgPwdOITMv+a0tjhhJU37WnRC+xxTrbEqRcOt96JvGOkPb8i7g==
   dependencies:
     "@parcel/plugin" "2.5.0"
     "@parcel/utils" "2.5.0"
+    react-refresh "^0.9.0"
+
+"@parcel/transformer-react-refresh-wrap@^2.5.0":
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-react-refresh-wrap/-/transformer-react-refresh-wrap-2.8.3.tgz#8b0392638405dd470a886002229f7889d5464822"
+  integrity sha512-q8AAoEvBnCf/nPvgOwFwKZfEl/thwq7c2duxXkhl+tTLDRN2vGmyz4355IxCkavSX+pLWSQ5MexklSEeMkgthg==
+  dependencies:
+    "@parcel/plugin" "2.8.3"
+    "@parcel/utils" "2.8.3"
     react-refresh "^0.9.0"
 
 "@parcel/transformer-svg@2.5.0":
