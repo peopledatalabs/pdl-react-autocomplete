@@ -11,7 +11,7 @@ interface AutocompleteProps {
 }
 
 function Autocomplete({
-  field, size, onTermSelected, apiKey, placeholder
+  field, size, onTermSelected, apiKey, placeholder,
 }: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
