@@ -835,21 +835,21 @@
     semver "^5.7.1"
 
 "@parcel/transformer-typescript-types@^2.8.3":
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-typescript-types/-/transformer-typescript-types-2.9.2.tgz#cf00fa4b72d4c0c502aa41ccc4058e0051c20f17"
-  integrity sha512-DCWx42Lg2XqwXf90TFCD+uV44GYat69NkTPvilrcr3gws/4y3l978cYu0Q0FShOLWOfteTWWuL+sD0fDIBZDKQ==
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-typescript-types/-/transformer-typescript-types-2.9.3.tgz#6f74b807da228e8944aefa21d4a7c21e576dec85"
+  integrity sha512-W+Ze3aUTdZuBQokXlkEQ/1hUApUm6VRyYzPqEs9jcqCqU8mv18i5ZGAz4bMuIJOBprp7M2wt10SJJx/SC1pl1A==
   dependencies:
-    "@parcel/diagnostic" "2.9.2"
-    "@parcel/plugin" "2.9.2"
+    "@parcel/diagnostic" "2.9.3"
+    "@parcel/plugin" "2.9.3"
     "@parcel/source-map" "^2.1.1"
-    "@parcel/ts-utils" "2.9.2"
-    "@parcel/utils" "2.9.2"
+    "@parcel/ts-utils" "2.9.3"
+    "@parcel/utils" "2.9.3"
     nullthrows "^1.1.1"
 
-"@parcel/ts-utils@2.9.2":
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/@parcel/ts-utils/-/ts-utils-2.9.2.tgz#873a341f592743b617333d07198fe888a99dffa3"
-  integrity sha512-Julkwe/iJ/CWrL+/s0L/LUq7FWyB0bRvd7G1qnL1cGjCuspD6qSp6Ko4xLmSYakco8FTlIU8VRbRTBs9UHOIEQ==
+"@parcel/ts-utils@2.9.3":
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/@parcel/ts-utils/-/ts-utils-2.9.3.tgz#106a7251019a9301ac67b56c921d4cfc3999542a"
+  integrity sha512-MiQoXFV8I4IWZT/q5yolKN/gnEY5gZfGB2X7W9WHJbRgyjlT/A5cPERXzVBj6mc3/VM1GdZJz76w637GUcQhow==
   dependencies:
     nullthrows "^1.1.1"
 
