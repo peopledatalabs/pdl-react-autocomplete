@@ -8,10 +8,11 @@ interface AutocompleteProps {
   onTermSelected: (term: string) => void,
   apiKey: string,
   placeholder: string,
+  beta?: boolean,
 }
 
 function Autocomplete({
-  field, size, onTermSelected, apiKey, placeholder,
+  field, size, onTermSelected, apiKey, placeholder, beta,
 }: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
@@ -45,6 +46,7 @@ function Autocomplete({
 
     let reqURL = `https://api.peopledatalabs.com/v5/autocomplete?field=${field}&text=${searchTerm}`;
     if (size !== undefined) reqURL += `&size=${size}`;
+    if (beta) reqURL += '&beta=true';
 
     const response = await fetch(reqURL, {
       headers: {
