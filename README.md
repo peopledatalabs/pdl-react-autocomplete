@@ -75,6 +75,7 @@ The Autocomplete API endpoint is documented here: https://docs.peopledatalabs.co
         9. sub_role
         10. skill
         11. title
+        12. website
 
     - Each field argument value for the Autocomplete API maps to a specific subset of Person Schema fields. To see the exact mappings, visit the [Autocomplete API Input Parameters](https://docs.peopledatalabs.com/docs/input-parameters-autocomplete-api) documentation
 
