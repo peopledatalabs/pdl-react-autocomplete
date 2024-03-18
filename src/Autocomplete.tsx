@@ -8,11 +8,11 @@ interface AutocompleteProps {
   onTermSelected: (term: string) => void,
   apiKey: string,
   placeholder: string,
-  beta?: boolean,
+  titlecase?: boolean,
 }
 
 function Autocomplete({
-  field, size, onTermSelected, apiKey, placeholder, beta,
+  field, size, onTermSelected, apiKey, placeholder, titlecase,
 }: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
@@ -46,7 +46,7 @@ function Autocomplete({
 
     let reqURL = `https://api.peopledatalabs.com/v5/autocomplete?field=${field}&text=${searchTerm}`;
     if (size !== undefined) reqURL += `&size=${size}`;
-    if (beta) reqURL += '&beta=true';
+    if (titlecase) reqURL += '&titlecase=true';
 
     const response = await fetch(reqURL, {
       headers: {
@@ -179,15 +179,15 @@ function Autocomplete({
       case 'company':
         return 'IE: people data labs';
       case 'country':
-        return 'IE: ["united states"]';
+        return 'IE: united states';
       case 'industry':
         return 'IE: computer software';
       case 'location':
         return 'IE: berkeley, california, united states';
       case 'major':
-        return 'IE: ["entrepreneurship"]';
+        return 'IE: entrepreneurship';
       case 'region':
-        return 'IE: ["california, united states"]';
+        return 'IE: california, united states';
       case 'role':
         return 'IE: operations';
       case 'sub_role':
@@ -198,6 +198,8 @@ function Autocomplete({
         return 'IE: data analysis';
       case 'title':
         return 'IE: co-founder and chief executive officer';
+      case 'website':
+        return 'IE: peopledatalabs.com';
       default:
         return '';
     }
