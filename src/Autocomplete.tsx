@@ -1,13 +1,14 @@
 // eslint-disable-next-line import/no-unresolved
-import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 
+import React, { useEffect, useRef, useState } from 'react';
+
 interface AutocompleteProps {
-  field: string,
-  size?: number,
-  onTermSelected: (term: string) => void,
   apiKey: string,
+  field: string,
+  onTermSelected: (term: string) => void,
   placeholder: string,
+  size?: number,
   titlecase?: boolean,
 }
 
@@ -15,7 +16,7 @@ function Autocomplete({
   field, size, onTermSelected, apiKey, placeholder, titlecase,
 }: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState < { name: string, count: number }[] >([]);
+  const [searchResults, setSearchResults] = useState < { count: number, name: string }[] >([]);
   const [focus, setFocus] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
