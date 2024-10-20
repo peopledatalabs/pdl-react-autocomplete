@@ -1,3 +1,6 @@
+<p align="center">
+<img src="https://www.peopledatalabs.com/images/pdl_white_logo.png" width="250" alt="People Data Labs Logo">
+</p>
 <h1 align="center">PDL React Autocomplete</h1>
 <p align="center">
   <a href="">
