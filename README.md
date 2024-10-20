@@ -1,5 +1,7 @@
 <p align="center">
-<img src="https://www.peopledatalabs.com/images/pdl_white_logo.png" width="250" alt="People Data Labs Logo">
+<div style="background-color: white; padding: 5px 10px 0px; width: 250px; margin: 0 auto;">
+<img src="https://www.peopledatalabs.com/images/company-logo.png"  width="250" alt="People Data Labs Logo">
+</div>
 </p>
 <h1 align="center">PDL React Autocomplete</h1>
 <p align="center">
