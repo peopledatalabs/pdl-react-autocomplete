@@ -4,8 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "sunday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
     ignore:
+      - dependency-name: "@types/react"
+      - dependency-name: "@types/react-dom"
       - dependency-name: "@typescript-eslint/eslint-plugin"
       - dependency-name: "@typescript-eslint/parser"
       - dependency-name: "eslint"
       - dependency-name: "eslint-plugin-unused-imports"
+      - dependency-name: "react"
+      - dependency-name: "react-dom"
