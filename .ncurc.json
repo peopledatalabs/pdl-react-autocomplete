@@ -2,10 +2,14 @@
     "interactive": true,
     "packageManager": "yarn",
     "reject": [
+        "@types/react",
+        "@types/react-dom",
         "@typescript-eslint/eslint-plugin",
         "@typescript-eslint/parser",
         "eslint",
-        "eslint-plugin-unused-imports"
+        "eslint-plugin-unused-imports",
+        "react",
+        "react-dom"
     ],
     "root": true
 }
