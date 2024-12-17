@@ -10,10 +10,11 @@ interface AutocompleteProps {
   placeholder: string,
   size?: number,
   titlecase?: boolean,
+  updated_title_roles?: boolean,
 }
 
 function Autocomplete({
-  field, size, onTermSelected, apiKey, placeholder, titlecase,
+  field, size, onTermSelected, apiKey, placeholder, titlecase, updated_title_roles,
 }: AutocompleteProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState < { count: number, name: string }[] >([]);
@@ -48,6 +49,7 @@ function Autocomplete({
     let reqURL = `https://api.peopledatalabs.com/v5/autocomplete?field=${field}&text=${searchTerm}`;
     if (size !== undefined) reqURL += `&size=${size}`;
     if (titlecase) reqURL += '&titlecase=true';
+    if (updated_title_roles) reqURL += '&updated_title_roles=true';
 
     const response = await fetch(reqURL, {
       headers: {
@@ -177,6 +179,8 @@ function Autocomplete({
 
   const placeholderText = () => {
     switch (field) {
+      case 'class':
+        return 'IE: sales_and_marketing';
       case 'company':
         return 'IE: people data labs';
       case 'country':
