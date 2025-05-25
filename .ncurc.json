@@ -1,6 +1,6 @@
 {
     "interactive": true,
-    "packageManager": "yarn",
+    "packageManager": "pnpm",
     "reject": [
         "@types/react",
         "@types/react-dom",
