@@ -15,7 +15,8 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: yarn
-      - run: yarn run pub
+      - run: npm install -g pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm pub
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

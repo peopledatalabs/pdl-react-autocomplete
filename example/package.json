@@ -1,16 +1,17 @@
 {
   "name": "example",
   "version": "0.1.0",
+  "packageManager": "pnpm@10.6.5",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
+    "pdl-react-autocomplete": "*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4",
-    "pdl-react-autocomplete": "*"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,6 +35,12 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "core-js",
+      "core-js-pure"
     ]
   }
 }
