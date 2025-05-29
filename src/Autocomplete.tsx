@@ -177,6 +177,8 @@ function Autocomplete({
 
   const placeholderText = () => {
     switch (field) {
+      case 'all_location':
+        return 'IE: miami';
       case 'class':
         return 'IE: sales_and_marketing';
       case 'company':
@@ -186,6 +188,8 @@ function Autocomplete({
       case 'industry':
         return 'IE: computer software';
       case 'location':
+        return 'IE: berkeley, california, united states';
+      case 'location_name':
         return 'IE: berkeley, california, united states';
       case 'major':
         return 'IE: entrepreneurship';
