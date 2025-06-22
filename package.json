@@ -1,8 +1,8 @@
 {
   "name": "pdl-react-autocomplete",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A react component for the People Data Labs Autocomplete API",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.12.1",
   "source": "src/index.ts",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -40,9 +40,9 @@
     "url": "https://github.com/peopledatalabs/pdl-react-autocomplete/issues"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.15.2",
-    "@parcel/transformer-react-refresh-wrap": "^2.15.2",
-    "@parcel/transformer-typescript-types": "^2.15.2",
+    "@parcel/packager-ts": "^2.15.4",
+    "@parcel/transformer-react-refresh-wrap": "^2.15.4",
+    "@parcel/transformer-typescript-types": "^2.15.4",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
@@ -50,7 +50,7 @@
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -58,7 +58,7 @@
     "eslint-plugin-typescript-sort-keys": "^3.3.0",
     "eslint-plugin-unused-imports": "^3.2.0",
     "npm-check-updates": "^18.0.1",
-    "parcel": "^2.15.2",
+    "parcel": "^2.15.4",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
