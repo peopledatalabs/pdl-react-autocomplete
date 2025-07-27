@@ -67,7 +67,7 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
       npm-check-updates:
-        specifier: ^18.0.1
+        specifier: ^18.0.2
         version: 18.0.2
       parcel:
         specifier: ^2.15.4
