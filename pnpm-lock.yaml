@@ -73,7 +73,7 @@ importers:
         specifier: ^2.15.4
         version: 2.15.4(@swc/helpers@0.5.17)
       typescript:
-        specifier: ^5.8.3
+        specifier: ^5.9.2
         version: 5.9.2
 
 packages:
