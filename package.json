@@ -26,7 +26,10 @@
     "pub": "pnpm run build && pnpm publish --no-git-checks --provenance --access public",
     "check-packages": "pnpm dlx npm-check-updates"
   },
-  "repository": "https://github.com/peopledatalabs/pdl-react-autocomplete.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peopledatalabs/pdl-react-autocomplete.git"
+  },
   "keywords": [
     "peopledatalabs",
     "People Data Labs",
