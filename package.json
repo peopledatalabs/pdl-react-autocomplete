@@ -1,8 +1,8 @@
 {
   "name": "pdl-react-autocomplete",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "A react component for the People Data Labs Autocomplete API",
-  "packageManager": "pnpm@10.16.1",
+  "packageManager": "pnpm@10.17.0",
   "source": "src/index.ts",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -43,9 +43,9 @@
     "url": "https://github.com/peopledatalabs/pdl-react-autocomplete/issues"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.15.4",
-    "@parcel/transformer-react-refresh-wrap": "^2.15.4",
-    "@parcel/transformer-typescript-types": "^2.15.4",
+    "@parcel/packager-ts": "^2.16.0",
+    "@parcel/transformer-react-refresh-wrap": "^2.16.0",
+    "@parcel/transformer-typescript-types": "^2.16.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
@@ -60,8 +60,8 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-typescript-sort-keys": "^3.3.0",
     "eslint-plugin-unused-imports": "^3.2.0",
-    "npm-check-updates": "^18.1.1",
-    "parcel": "^2.15.4",
+    "npm-check-updates": "^18.3.0",
+    "parcel": "^2.16.0",
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
