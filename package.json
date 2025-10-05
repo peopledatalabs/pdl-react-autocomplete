@@ -1,6 +1,6 @@
 {
   "name": "pdl-react-autocomplete",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "A react component for the People Data Labs Autocomplete API",
   "packageManager": "pnpm@10.18.0",
   "source": "src/index.ts",
