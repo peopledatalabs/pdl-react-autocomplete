@@ -67,8 +67,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.9.2))(eslint@8.57.1)(typescript@5.9.2))(eslint@8.57.1)
       npm-check-updates:
-        specifier: ^18.3.0
-        version: 18.3.0
+        specifier: ^19.0.0
+        version: 19.0.0
       parcel:
         specifier: ^2.16.0
         version: 2.16.0(@swc/helpers@0.5.17)
@@ -1651,9 +1651,9 @@ packages:
   node-releases@2.0.19:
     resolution: {integrity: sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==}
 
-  npm-check-updates@18.3.0:
-    resolution: {integrity: sha512-Wcm90Af5JuzxwPTtdLl0OH2O1TCeqPTYBch1M3bePmfqylRMiFXXh+uglE4sfMjwdTjw7aIReMwudXeqoYvh2Q==}
-    engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
+  npm-check-updates@19.0.0:
+    resolution: {integrity: sha512-qcfjZEv6xB+WvW24S8wU1MKISPPiTREraBg62XDo/7zmOLXH3Zj7ti2v/LRfks0qITU8SDZLTWwgIitflvursw==}
+    engines: {node: '>=20.0.0', npm: '>=8.12.1'}
     hasBin: true
 
   nullthrows@1.1.1:
@@ -4125,7 +4125,7 @@ snapshots:
 
   node-releases@2.0.19: {}
 
-  npm-check-updates@18.3.0: {}
+  npm-check-updates@19.0.0: {}
 
   nullthrows@1.1.1: {}
 
