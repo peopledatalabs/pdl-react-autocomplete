@@ -1,23 +1,27 @@
 {
   "name": "example",
   "version": "0.1.0",
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.18.2",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
-    "pdl-react-autocomplete": "*",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "pdl-react-autocomplete": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4"
+    "web-vitals": "^5.1.0"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^19.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "check-packages": "pnpm dlx npm-check-updates"
   },
   "eslintConfig": {
     "extends": [
