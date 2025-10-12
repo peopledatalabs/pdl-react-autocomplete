@@ -2,7 +2,7 @@
   "name": "pdl-react-autocomplete",
   "version": "2.1.7",
   "description": "A react component for the People Data Labs Autocomplete API",
-  "packageManager": "pnpm@10.18.0",
+  "packageManager": "pnpm@10.18.2",
   "source": "src/index.ts",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -72,6 +72,8 @@
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@swc/core",
+      "core-js",
+      "core-js-pure",
       "lmdb",
       "msgpackr-extract"
     ]
