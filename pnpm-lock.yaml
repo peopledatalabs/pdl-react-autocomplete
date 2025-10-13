@@ -88,8 +88,8 @@ importers:
         specifier: ^14.6.1
         version: 14.6.1(@testing-library/dom@10.4.1)
       pdl-react-autocomplete:
-        specifier: '*'
-        version: 2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: workspace:*
+        version: link:..
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -4807,12 +4807,6 @@ packages:
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
-
-  pdl-react-autocomplete@2.1.7:
-    resolution: {integrity: sha512-0WshbjIvl7cUsi0Bt4zwpOWMNamwHwQOEPjlJrYYe6gV5XsfLn9QQ5QpXQkMqPmsDvvlnn/bVsNlX0I8NjCzWA==}
-    peerDependencies:
-      react: '>= 16.8.0'
-      react-dom: '>= 16.8.0'
 
   performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
@@ -12418,11 +12412,6 @@ snapshots:
   path-to-regexp@0.1.12: {}
 
   path-type@4.0.0: {}
-
-  pdl-react-autocomplete@2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   performance-now@2.1.0: {}
 
