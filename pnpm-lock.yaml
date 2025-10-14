@@ -102,10 +102,6 @@ importers:
       web-vitals:
         specifier: ^5.1.0
         version: 5.1.0
-    devDependencies:
-      npm-check-updates:
-        specifier: ^19.1.0
-        version: 19.1.0
 
 packages:
 

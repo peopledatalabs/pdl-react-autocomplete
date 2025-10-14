@@ -13,9 +13,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^5.1.0"
   },
-  "devDependencies": {
-    "npm-check-updates": "^19.1.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
