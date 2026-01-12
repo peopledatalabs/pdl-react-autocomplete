@@ -2,7 +2,7 @@
   "name": "pdl-react-autocomplete",
   "version": "2.1.14",
   "description": "A react component for the People Data Labs Autocomplete API",
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.28.0",
   "source": "src/index.ts",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -60,7 +60,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-typescript-sort-keys": "^3.3.0",
     "eslint-plugin-unused-imports": "^3.2.0",
-    "npm-check-updates": "^19.3.0",
+    "npm-check-updates": "^19.3.1",
     "parcel": "^2.16.3",
     "typescript": "^5.9.3"
   },
